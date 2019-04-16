@@ -1,0 +1,33 @@
+body {
+    background: #20384C;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.nabvar {
+    width: 100%;
+}
+
+.nav-item{
+    padding: 1.2rem;
+    font-size: 20px;
+}
+
+.index-image {
+    size: 10%;
+}
+
+/* Banner style */
+
+.banner {
+   
+    position: relative;
+}
+
+.banner__img {
+    object-fit: cover;  
+}
