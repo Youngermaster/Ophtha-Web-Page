@@ -1,0 +1,7 @@
+Blue -> rgb: 22, 117, 216 #1675d8 #0077FF
+Gray -> rgb: 235, 235, 235 #d4d4d4
+white -> rgb: 251, 251, 251 #fcfcfc
+        
+Blue -> rgb: 54, 141, 251 #368dfc        
+Gray -> rgb: 67, 67, 67 #434343
+Black -> rgb: 51, 51, 51 #333333       
