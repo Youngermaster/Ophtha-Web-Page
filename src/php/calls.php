@@ -34,19 +34,19 @@
               <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="index.html">Home</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/index.html">Home</a>
                       </li>
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.html">Calls</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Calls</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="registers.html">Registers</a>
+                          <a  style="text-decoration:none"class="nav-link-personalized" href="registers.php">Registers</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="clients.html">Patient</a>
+                          <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Patient</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none" class="nav-link-personalized" href="login.html">Exit</a>
+                          <a  style="text-decoration:none" class="nav-link-personalized" href="../html/login.php">Exit</a>
                       </li>
                       <li class="nav-item">
                           <div class="toggle-container">
