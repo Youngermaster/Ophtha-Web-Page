@@ -6,8 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="../assets/images/Logos/Ophta-logo-75x75-transparent.png" type="image/x-icon">
-    <link rel="stylesheet" href="">
-
+    
     <!-- Bootstrap Css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
@@ -46,7 +45,7 @@
                           <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Patient</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none" class="nav-link-personalized" href="../html/login.html">Exit</a>
+                          <a  style="text-decoration:none" class="nav-link-personalized" href="login.php">Exit</a>
                       </li>
                       <li class="nav-item">
                           <div class="toggle-container">
@@ -55,15 +54,10 @@
                       </li>
                   </ul>
               </div>
-    
           </div>
       </nav>
       </div>
-      
-  
-
-  <br><br>
-    
+      <br><br>
   <div class="registers">
     <center>
     <table>
@@ -76,23 +70,24 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "ophtha");
 // Check connection
-if ($conn->connect_error) {
+if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
-  } 
+  
   $sql = "SELECT * FROM empresa";
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
       // output data of each row
       while($row = mysqli_fetch_row($result)) {
-          echo "<tr> <td> <a href=\"company_full_profile.php\" target=\"_blank\" id =\"" . $row[0] . "\" onclick=\"reply_click(this.id)\">". $row[0] . " </a> </td><td> " . $row[2] . " </td><td> "
-    . $row[4]. " </td></tr> <br>";
-
-}
-echo "</table>";
-} else { echo "0 results"; }
+        echo "<tr><td> <a href=\"company_full_profile.php\" target=\"_blank\" id =\"" . utf8_encode($row[0]) . "\" onclick=\"reply_click(this.id)\">"
+        . utf8_encode($row[0]) . " </a> </td><td> " . utf8_encode($row[1]) . " </td><td> " . utf8_encode($row[3]) . " </td></tr>";
+      }
+  } 
+  else 
+    echo "0 results";
 $conn->close();
 ?>
+</table>
 </center>
   </div>
   <br><br>

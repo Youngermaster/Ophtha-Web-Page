@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="../assets/images/Logos/Ophta-logo-75x75-transparent.png" type="image/x-icon">
-    <link rel="stylesheet" href="">
 
-    <!-- Bootstrap Css -->
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/register.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,9 +21,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <title>Ophtha | Clients</title>
+    <title>Patient profile</title>
 </head>
 <body>
+
+    <script src="../js/save_cookie.js"></script>
     
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light bg-dark sticky-top">
@@ -56,51 +59,40 @@
                       </li>
                   </ul>
               </div>
-    
           </div>
       </nav>
       </div>
-<br>
-<br>
-  <div class="patient">
-    <center>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Type Id</th> 
-            <th>Name</th>
-            <th>Phone</th>
-        </tr>
-        
-<?php
-$conn = mysqli_connect("localhost", "root", "", "ophtha");
-// Check connection
-if ($conn->connect_error)
-    die("Connection failed: " . $conn->connect_error);
-  
-  $sql = "SELECT * FROM paciente";
-  $result = $conn->query($sql);
-  
-  if ($result->num_rows > 0) {
-      // output data of each row
-      while($row = mysqli_fetch_row($result)) {
-        echo "<tr><td> <a href=\"patient_full_profile.php\" target=\"_blank\" id =\"" . utf8_encode($row[1]) . "\" onclick=\"reply_click(this.id)\">". utf8_encode($row[1]) . " </a> </td><td> "
-        . utf8_encode($row[0]) . " </td><td> " . utf8_encode($row[2]) . " </td><td> " . utf8_encode($row[3]) . " </td></tr>";
-      }
-  } 
-  else 
-    echo "0 results"; 
-$conn->close();
-?>
-</table>
-</center>
-  </div>
-  <br><br>
-  <footer>
-    <h6>&copy 2019 | All rights reserved.</h6>
-  </footer>
 
-  <script src="../js/toogle.js"></script>   
-  <script src="../js/save_cookie.js"></script>    
+  <br><br>
+    
+    <div class="patient">
+      <center>
+      <table>
+          
+  <?php
+  $clicked_register = $_COOKIE["headvalue"];
+    $conn = mysqli_connect("localhost", "root", "", "ophtha");
+    // Check connection
+    if ($conn->connect_error)
+      die("Connection failed: " . $conn->connect_error);
+         
+    $sql = "SELECT * FROM paciente WHERE id = $clicked_register";
+    $result = $conn->query($sql);
+    
+    // output data of each row
+    $row = mysqli_fetch_row($result);
+
+    echo "<tr><td><th>Type Id</th> <th>" . utf8_encode($row[0]) . "</th></td></tr>";
+    echo "<tr><td><th>Patient Id</th><th>" . utf8_encode($row[1]) . "</th></td></tr>";
+    echo "<tr><td><th>Name</th> <th>" . utf8_encode($row[2]) . "</th></td></tr>";
+    echo "<tr><td><th>Phone</th> <th>" . utf8_encode($row[3]) . "</th></td></tr>";
+    echo "<tr><td><th>Address</th> <th>" . utf8_encode($row[4]) . "</th></td></tr>";
+    echo "<tr><td><th>Interests</th> <th>" . utf8_encode($row[5]) . "</th></td></tr>";
+    echo "<tr><td><th>Mobile number</th> <th>" . utf8_encode($row[6]) . "</th></td></tr>";
+    $conn->close();
+  ?>
+  </table>
+  </center>
+    </div>
 </body>
 </html>
