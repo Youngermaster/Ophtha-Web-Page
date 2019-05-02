@@ -56,6 +56,18 @@
               </div>
           </div>
       </nav>
+    </div>
+      <br>
+      <div class="container">
+        <div class="create-and-search">
+            <form class="form-inline my-2 my-lg-0">
+            <p>
+                <a class="btn btn-lg btn-primary my-2 mr-2 my-lg-0" href="/docs/4.3/components/navbar/" role="button">Add a register</a>
+                <input id="search-text" class="form-control mr-sm-2 my-2 ml-2 my-lg-0" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0 my-lg-0" type="submit" id="search-button">Search</button>
+            </p>
+            </form>
+        </div>
       </div>
       <br><br>
   <div class="registers">
@@ -65,6 +77,7 @@
             <th>Code</th> 
             <th>Name</th>
             <th>Phone</th>
+            <th>Delete</th>
         </tr>
         
 <?php
@@ -80,7 +93,8 @@ if ($conn->connect_error)
       // output data of each row
       while($row = mysqli_fetch_row($result)) {
         echo "<tr><td> <a href=\"company_full_profile.php\" target=\"_blank\" id =\"" . utf8_encode($row[0]) . "\" onclick=\"reply_click(this.id)\">"
-        . utf8_encode($row[0]) . " </a> </td><td> " . utf8_encode($row[1]) . " </td><td> " . utf8_encode($row[3]) . " </td></tr>";
+        . utf8_encode($row[0]) . " </a> </td><td> " . utf8_encode($row[1]) . " </td><td> " . utf8_encode($row[3]) .
+        " </td><td> <button class=\"btn btn-secondary my-2\" type=\"submit\">Delete</button> </td></tr>";
       }
   } 
   else 
