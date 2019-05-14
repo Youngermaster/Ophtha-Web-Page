@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/register.css">
+    <link type="text/css" rel="stylesheet" href="../css/index.css" >
+    <link type="text/css" rel="stylesheet" href="../css/register.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -58,16 +58,15 @@
       </nav>
     </div>
       <br>
+      <br>
       <div class="container">
-        <div class="create-and-search">
             <form class="form-inline my-2 my-lg-0">
-            <p>
-                <a class="btn btn-lg btn-primary my-2 mr-2 my-lg-0" href="/docs/4.3/components/navbar/" role="button">Add a register</a>
-                <input id="search-text" class="form-control mr-sm-2 my-2 ml-2 my-lg-0" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0 my-lg-0" type="submit" id="search-button">Search</button>
-            </p>
+                <p>
+                    <a class="btn btn-outline-primary my-2 mr-2 my-lg-0 " href="new_register.php" role="button">Add a register</a>
+                    <input id="search-text" class="form-control mr-sm-2 my-2 ml-2 my-lg-0" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0 my-lg-0" type="submit" id="search-button">Search</button>
+                </p>
             </form>
-        </div>
       </div>
       <br><br>
   <div class="registers">
@@ -94,7 +93,7 @@ if ($conn->connect_error)
       while($row = mysqli_fetch_row($result)) {
         echo "<tr><td> <a href=\"company_full_profile.php\" target=\"_blank\" id =\"" . utf8_encode($row[0]) . "\" onclick=\"reply_click(this.id)\">"
         . utf8_encode($row[0]) . " </a> </td><td> " . utf8_encode($row[1]) . " </td><td> " . utf8_encode($row[3]) .
-        " </td><td> <button class=\"btn btn-secondary my-2\" type=\"submit\">Delete</button> </td></tr>";
+        " </td><td> <button class=\"btn btn-danger my-2\" type=\"submit\">Delete</button> </td></tr>";
       }
   } 
   else 
