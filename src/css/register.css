@@ -20,7 +20,3 @@ tr:nth-child(even) {
 table, th, td {
     border: 1px solid black;
 }
-
-.another {
-    padding-left: 12rem;
-}

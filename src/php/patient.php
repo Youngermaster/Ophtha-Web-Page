@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/register.css">
 
-    <title>Ophtha | Clients</title>
+    <title>Clients | Ophtha</title>
 </head>
 <body>
     
@@ -47,7 +47,7 @@
                           <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Patient</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none" class="nav-link-personalized" href="login.php">Exit</a>
+                          <a  style="text-decoration:none" class="nav-link-personalized" href="../../index.php">Exit</a>
                       </li>
                       <li class="nav-item">
                           <div class="toggle-container">
@@ -62,6 +62,16 @@
       </div>
 <br>
 <br>
+<div class="container">
+        <form class="form-inline my-2 my-lg-0"  action="search_patient.php" method="get">
+            <p>
+                <a class="btn btn-outline-primary my-2 mr-2 my-lg-0 " href="new_patient_form.php" role="button">Add a patient</a>
+                <input name="search" class="form-control " type="text" placeholder="Search">
+                <input role="button" class="btn btn-outline-primary" type="submit" name="sending" value="search">
+            </p>
+        </form>
+    </div>
+    <br><br>
   <div class="patient">
     <center>
     <table>
@@ -70,6 +80,7 @@
             <th>Type Id</th> 
             <th>Name</th>
             <th>Phone</th>
+            <th>Delete</th>
         </tr>
         
 <?php
@@ -84,8 +95,12 @@ if ($conn->connect_error)
   if ($result->num_rows > 0) {
       // output data of each row
       while($row = mysqli_fetch_row($result)) {
-        echo "<tr><td> <a href=\"patient_full_profile.php\" target=\"_blank\" id =\"" . utf8_encode($row[1]) . "\" onclick=\"reply_click(this.id)\">". utf8_encode($row[1]) . " </a> </td><td> "
-        . utf8_encode($row[0]) . " </td><td> " . utf8_encode($row[2]) . " </td><td> " . utf8_encode($row[3]) . " </td></tr>";
+        echo "<tr><td> <a href=\"patient_full_profile.php\" target=\"_blank\" id =\"" . utf8_encode($row[1]) .
+        "\" onclick=\"reply_click(this.id)\">". utf8_encode($row[1]) . " </a> </td><td> "
+        . utf8_encode($row[0]) . " </td><td> " . utf8_encode($row[2]) . " </td><td> " . utf8_encode($row[3]) .
+        " </td><td> <a role=\"button\"  
+        class=\"btn btn-danger my-2\" href=\"delete_patient.php\" type=\"submit\"  id =\"" . 
+        utf8_encode($row[1]) . "\" onclick=\"reply_click(this.id)\"> Delete </a> </td></tr>";
       }
   } 
   else 

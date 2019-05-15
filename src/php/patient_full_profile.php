@@ -6,10 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="../assets/images/Logos/Ophta-logo-75x75-transparent.png" type="image/x-icon">
 
-
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/register.css">
-    <link rel="stylesheet" href="../css/register.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,43 +22,6 @@
 <body>
 
     <script src="../js/save_cookie.js"></script>
-    
-    <div class="container">
-        <nav class="navbar navbar-expand-md navbar-light bg-dark sticky-top">
-          <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><img src="../assets/images/Logos/Ophta-logo-75x75-transparent.png"></a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              
-              <div class="collapse navbar-collapse" id="navbarResponsive">
-                  <ul class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/index.html">Home</a>
-                      </li>
-                      <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Calls</a>
-                      </li>
-                      <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="registers.php">Registers</a>
-                      </li>
-                      <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Patient</a>
-                      </li>
-                      <li class="nav-item">
-                          <a  style="text-decoration:none" class="nav-link-personalized" href="login.php">Exit</a>
-                      </li>
-                      <li class="nav-item">
-                          <div class="toggle-container">
-                              <input class="input-toggle" type="checkbox" id="switch" name="theme"/><label class="mega-toggle" for="switch">Toggle</label>
-                          </div>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
-      </div>
-
   <br><br>
     
     <div class="patient">
@@ -82,13 +41,13 @@
     // output data of each row
     $row = mysqli_fetch_row($result);
 
-    echo "<tr><td><th>Type Id</th> <th>" . utf8_encode($row[0]) . "</th></td></tr>";
-    echo "<tr><td><th>Patient Id</th><th>" . utf8_encode($row[1]) . "</th></td></tr>";
-    echo "<tr><td><th>Name</th> <th>" . utf8_encode($row[2]) . "</th></td></tr>";
-    echo "<tr><td><th>Phone</th> <th>" . utf8_encode($row[3]) . "</th></td></tr>";
-    echo "<tr><td><th>Address</th> <th>" . utf8_encode($row[4]) . "</th></td></tr>";
-    echo "<tr><td><th>Interests</th> <th>" . utf8_encode($row[5]) . "</th></td></tr>";
-    echo "<tr><td><th>Mobile number</th> <th>" . utf8_encode($row[6]) . "</th></td></tr>";
+    echo "<tr><th>Type Id</th> <th>" . utf8_encode($row[0]) . "</th></tr>";
+    echo "<tr><th>Patient Id</th><th>" . utf8_encode($row[1]) . "</th></tr>";
+    echo "<tr><th>Name</th> <th>" . utf8_encode($row[2]) . "</th></tr>";
+    echo "<tr><th>Phone</th> <th>" . utf8_encode($row[3]) . "</th></tr>";
+    echo "<tr><th>Address</th> <th>" . utf8_encode($row[4]) . "</th></tr>";
+    echo "<tr><th>Interests</th> <th>" . utf8_encode($row[5]) . "</th></tr>";
+    echo "<tr><th>Mobile number</th> <th>" . utf8_encode($row[6]) . "</th></tr>";
     $conn->close();
   ?>
   </table>
