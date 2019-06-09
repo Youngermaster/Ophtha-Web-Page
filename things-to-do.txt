@@ -1,1 +1,0 @@
-- How to quit the bootom bar of a link.

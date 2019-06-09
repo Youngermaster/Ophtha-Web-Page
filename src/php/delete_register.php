@@ -7,7 +7,7 @@
     if ($conn->connect_error)
         die("Connection failed: " . $conn->connect_error);
          
-   $sql = "DELETE FROM empresa WHERE codigo = $clicked_register";
+   $sql = "DELETE FROM Companies WHERE code = $clicked_register";
    
    $result = $conn->query($sql);
    $conn->close();

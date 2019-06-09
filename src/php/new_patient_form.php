@@ -38,7 +38,7 @@
 
     <br>
     <input type="submit" value="add" name="add" class="btn btn-primary"/>
-    <a class="btn btn-outline-danger my-2 mr-2 my-lg-0 " href="patient.php" role="button">cancel</a>
+    <a class="btn btn-outline-danger my-2 mr-2 my-lg-0" href="patient.php" role="button">cancel</a>
             
     <p class="mt-5 mb-3 text-muted">&copy 2019 | All rights reserved.</p>
   </form>

@@ -27,7 +27,7 @@
         
         <nav class="navbar sticky-top fixed-top navbar-expand-md navbar-light bg-dark">
           <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><img src="../assets/images/Logos/Ophta-logo-75x75-transparent.png"></a>
+              <a class="navbar-brand" href="../html/home.html"><img src="../assets/images/Logos/Ophta-logo-75x75-transparent.png"></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                   <span class="navbar-toggler-icon"></span>
               </button>
@@ -35,7 +35,7 @@
               <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/index.html">Home</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/home.html">Home</a>
                       </li>
                       <li class="nav-item">
                           <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Calls</a>
@@ -89,7 +89,7 @@ $conn = mysqli_connect("localhost", "root", "", "ophtha");
 if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
   
-  $sql = "SELECT * FROM paciente";
+  $sql = "SELECT * FROM Patients";
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
@@ -99,7 +99,7 @@ if ($conn->connect_error)
         "\" onclick=\"reply_click(this.id)\">". utf8_encode($row[1]) . " </a> </td><td> "
         . utf8_encode($row[0]) . " </td><td> " . utf8_encode($row[2]) . " </td><td> " . utf8_encode($row[3]) .
         " </td><td> <a role=\"button\"  
-        class=\"btn btn-danger my-2\" href=\"delete_patient.php\" type=\"submit\"  id =\"" . 
+        class=\"btn btn-danger my-2\" href=\"delete_patient.php\" id =\"" . 
         utf8_encode($row[1]) . "\" onclick=\"reply_click(this.id)\"> Delete </a> </td></tr>";
       }
   } 
