@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/register.css">
 
-    <title>Clients | Ophtha</title>
+    <title>Pacientes | Ophtha</title>
 </head>
 <body>
     
@@ -27,7 +27,7 @@
         
         <nav class="navbar sticky-top fixed-top navbar-expand-md navbar-light bg-dark">
           <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><img src="../assets/images/Logos/Ophta-logo-75x75-transparent.png"></a>
+              <a class="navbar-brand" href="../html/home.html"><img src="../assets/images/Logos/Ophta-logo-75x75-transparent.png"></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                   <span class="navbar-toggler-icon"></span>
               </button>
@@ -35,7 +35,7 @@
               <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/index.html">Home</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/home.html">Inicio</a>
                       </li>
                       <li class="nav-item">
                           <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Calls</a>

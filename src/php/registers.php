@@ -19,7 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <title>Registers | Ophtha</title>
+    <title>Droguerías | Ophtha</title>
 </head>
 <body>
     <div class="container">
@@ -33,19 +33,19 @@
               <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/home.html">Home</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/home.html">Inicio</a>
                       </li>
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Calls</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Llamadas</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="registers.php">Registers</a>
+                          <a style="text-decoration:none"class="nav-link-personalized" href="registers.php">Droguerías</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Patient</a>
+                          <a style="text-decoration:none"class="nav-link-personalized" href="patient.php">Pacientes</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none" class="nav-link-personalized" href="../../index.php  ">Exit</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="../../index.php">Salir</a>
                       </li>
                       <li class="nav-item">
                           <div class="toggle-container">
@@ -62,9 +62,9 @@
       <div class="container">
             <form class="form-inline my-2 my-lg-0" action="search_registers.php" method="get">
                 <p>
-                    <a class="btn btn-outline-primary my-2 mr-2 my-lg-0 " href="new_register_form.php" role="button">Add a register</a>
-                    <input name="search" class="form-control " type="text" placeholder="Search">
-                    <input role="button" class="btn btn-outline-primary" type="submit" name="sending" value="search">
+                    <a class="btn btn-outline-primary my-2 mr-2 my-lg-0 " href="new_register_form.php" role="button">Añadir una droguería</a>
+                    <input name="search" class="form-control " type="text" placeholder="Buscar">
+                    <input role="button" class="btn btn-outline-primary" type="submit" name="sending" value="Buscar">
                 </p>
             </form>
       </div>
@@ -73,10 +73,11 @@
     <center>
     <table>
         <tr>
-            <th>Code</th> 
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Delete</th>
+            <th>Código</th> 
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Actualizar</th>
+            <th>Eliminar</th>
         </tr>
         
 <?php
@@ -91,11 +92,14 @@ if ($conn->connect_error)
   if ($result->num_rows > 0) {
       // output data of each row
       while($row = mysqli_fetch_row($result)) {
-        echo "<tr><td> <a href=\"company_full_profile.php\" target=\"_blank\" id =\"" . utf8_encode($row[0]) . 
+        echo "<tr><td> <a class=\"btn btn-primary my-2\" href=\"company_full_profile.php\" target=\"_blank\" id =\"" . utf8_encode($row[0]) . 
         "\" onclick=\"reply_click(this.id)\">" . utf8_encode($row[0]) . " </a> </td><td> " . 
-        utf8_encode($row[1]) . " </td><td> " . utf8_encode($row[3]) . " </td><td> <a 
-        class=\"btn btn-danger my-2\" href=\"delete_register.php\" id =\"" . 
-        utf8_encode($row[0]) . "\" onclick=\"reply_click(this.id)\" role=\"button\"> Delete </a> </td>
+        utf8_encode($row[1]) . " </td><td> " . utf8_encode($row[3]) . " </td><td>
+        <a class=\"btn btn-outline-primary my-2\" href=\"delete_register.php\" id =\"" . 
+        utf8_encode($row[0]) . "\" onclick=\"reply_click(this.id)\" role=\"button\"> Actualizar </a> </td>
+        </td><td> 
+        <a class=\"btn btn-outline-danger my-2\" href=\"delete_register.php\" id =\"" . 
+        utf8_encode($row[0]) . "\" onclick=\"reply_click(this.id)\" role=\"button\"> Eliminar </a> </td>
         </tr>";
       }
   } 
@@ -108,7 +112,7 @@ $conn->close();
   </div>
   <br><br>
   <footer>
-    <h6>&copy 2019 | All rights reserved.</h6>
+    <h6>&copy 2019 | Todos los derechos reservados.</h6>
   </footer>
 
   <script src="../js/toogle.js"></script>   

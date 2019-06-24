@@ -12,20 +12,20 @@
       <div class="login-box">
         <img src="src/assets/images/Logos/logo-Optha.png" class="avatar" alt="Avatar Image">
         
-          <!-- This is the Toggle who changes to light to dark -->
+          <!-- This is the Toggle who changes from light to dark -->
           <div class="toggle-container">
             <input class="input-toggle" type="checkbox" id="switch" name="theme"/><label class="mega-toggle" for="switch">Toggle</label>
           </div>
           
-          <h1>Log in here</h1>
+          <h1>Ingresa aquí</h1>
           <form action="src/html/home.html" method="post">
             <!-- USERNAME INPUT -->
-            <label for="user_name">Username</label>
-            <input type="text" placeholder="Enter your username" name="username">
+            <label for="user_name">Usuario</label>
+            <input type="text" placeholder="Escribe tu usuario" name="username">
             <!-- PASSWORD INPUT -->
-            <label for="user_password">Password</label>
-            <input type="password" placeholder="Enter your password" name="password">
-            <button name="send" type="submit" value="login">Log in</button>
+            <label for="user_password">Constraseña</label>
+            <input type="password" placeholder="Escribe tu contraseña" name="password">
+            <button name="send" type="submit" value="login">Ingresar</button>
           </form>
       </div>
       

@@ -18,8 +18,8 @@
             $base->exec("SET CHARACTER SET utf8");
     
             $sql_sentence = 
-            "INSERT INTO empresa (codigo, nombre, encargado, telefono, direccion, ciudad, region, pais, 
-                                  diasCompra, horario, numLlamadas, acumulado)
+            "INSERT INTO Companies (code, name, encargado, attendant, address, city, region, country, 
+                                  saleDays, schedule, amountOfCalls, acumulated)
             VALUES (:code, :name, :attendant, :phone, :address, :city, :region, :country, :saleDays,
                     :schedule, :amountOfCalls, :acumulated)";
             
@@ -35,8 +35,7 @@
             header("location: registers.php");
 
         } catch (Exception $e) {
-            // die('Error: ' . $e->GetMessage());
-            echo "Error line: " . $e->getLine();
+            echo "Error line: " . $e->getLine() . $e->getMessage();
         } finally {
             $base = null;
         }

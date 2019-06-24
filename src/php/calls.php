@@ -20,10 +20,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <title>Calls | Ophtha</title>
+    <title>Llamadas | Ophtha</title>
 </head>
 <body>
-
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light bg-dark sticky-top">
           <div class="container-fluid">
@@ -35,19 +34,19 @@
               <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/home.html">Home</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/home.html">Inicio</a>
                       </li>
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Calls</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Llamadas</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="registers.php">Registers</a>
+                          <a  style="text-decoration:none"class="nav-link-personalized" href="registers.php">Droguerías</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Patient</a>
+                          <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Pacientes</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none" class="nav-link-personalized" href="../../index.php">Exit</a>
+                          <a  style="text-decoration:none" class="nav-link-personalized" href="../../index.php">Salir</a>
                       </li>
                       <li class="nav-item">
                           <div class="toggle-container">
@@ -63,9 +62,9 @@
     <div class="container">
         <form class="form-inline my-2 my-lg-0" action="search_calls.php" method="get">
             <p>
-                <a class="btn btn-outline-primary my-2 mr-2 my-lg-0 " href="new_call_form.php" role="button">add a call</a>
-                <input name="search" class="form-control " type="text" placeholder="Search">
-                <input role="button" class="btn btn-outline-primary" type="submit" name="sending" value="search">
+                <a class="btn btn-outline-primary my-2 mr-2 my-lg-0 " href="new_call_form.php" role="button">Añadir una llamada</a>
+                <input name="search" class="form-control " type="text" placeholder="Buscar">
+                <input role="button" class="btn btn-outline-primary" type="submit" name="sending" value="Buscar">
             </p>
         </form>
     </div>
@@ -75,40 +74,46 @@
     <center>
     <table>
         <tr>
-            <th>Call Id</th> 
-            <th>Type Id</th>
-            <th>Id</th>
-            <th>Status</th>
-            <th>Call date</th>
+            <th>Id de la llamada</th> 
+            <th>Tipo de ID</th>
+            <th>ID</th>
+            <th>Estado</th>
+            <th>Fecha de la llamada</th>
         </tr>
-        
-<?php
-$conn = mysqli_connect("localhost", "root", "", "ophtha");
-// Check connection
-if ($conn->connect_error)
-    die("Connection failed: " . $conn->connect_error);
-  
-  $sql = "SELECT * FROM Calls";
-  $result = $conn->query($sql);
-  
-  if ($result->num_rows > 0) {
-      // output data of each row
-      while($row = mysqli_fetch_row($result)) {
-        echo "<tr><td> <a href=\"call_full_profile.php\" target=\"_blank\" id =\"" . utf8_encode($row[0]) . "\" onclick=\"reply_click(this.id)\">". utf8_encode($row[0])
-        . " </a> </td><td> " . utf8_encode($row[2]) . " </td><td> "  . utf8_encode($row[3]) . " </td><td> "
-        . utf8_encode($row[4]) . " </td><td> " . utf8_encode($row[5]) . " </td></tr>";
-      }
-  } 
-  else 
-    echo "0 results"; 
-$conn->close();
-?>
-</table>
-</center>
+        <?php
+            // Starts the connection with the database.
+            // The parameters could change.
+            $database_connection = mysqli_connect("localhost", "root", "", "ophtha");
+            // Check if connection works.
+            if ($database_connection->connect_error)
+                die("Connection failed: " . $database_connection->connect_error);
+            
+            $sql_sentence = "SELECT * FROM Calls"; // The SQL sentence.
+            $sql_query = $database_connection->query($sql_sentence); // The query of SQL.
+            
+            // If the query has more than 0 elements, those will be show
+            // otherwise nothing happens.
+            if ($sql_query->num_rows > 0) {
+                // output data of each row inside a table.
+                while($row = mysqli_fetch_row($sql_query)) {
+                    echo "<tr><td> <a href=\"call_full_profile.php\" target=\"_blank\" id =\"" 
+                    . utf8_encode($row[0]) . "\" onclick=\"reply_click(this.id)\">". utf8_encode($row[0])
+                    . " </a> </td><td> " . utf8_encode($row[2]) . " </td><td> "  . utf8_encode($row[3])
+                    . " </td><td> " . utf8_encode($row[4]) 
+                    . " </td><td> " . utf8_encode($row[5]) . " </td></tr>";
+                }
+            } 
+            else 
+                echo "<h1>0 results</h1>";
+
+            $database_connection->close();
+        ?>
+    </table>
+    </center>
   </div>
   <br><br>
   <footer>
-    <h6>&copy 2019 | All rights reserved.</h6>
+    <h6>&copy 2019 | Todos los derechos reservados.</h6>
   </footer>
 
   <script src="../js/toogle.js"></script>   

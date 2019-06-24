@@ -17,7 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <title>Patient profile</title>
+    <title>Perfil del paciente</title>
 </head>
 <body>
 
@@ -29,25 +29,25 @@
       <table>
           
   <?php
-  $clicked_register = $_COOKIE["headvalue"];
+    $clicked_register = $_COOKIE["headvalue"];
     $conn = mysqli_connect("localhost", "root", "", "ophtha");
     // Check connection
     if ($conn->connect_error)
       die("Connection failed: " . $conn->connect_error);
          
-    $sql = "SELECT * FROM paciente WHERE id = $clicked_register";
+    $sql = "SELECT * FROM Patients WHERE id = $clicked_register";
     $result = $conn->query($sql);
     
     // output data of each row
     $row = mysqli_fetch_row($result);
 
-    echo "<tr><th>Type Id</th> <th>" . utf8_encode($row[0]) . "</th></tr>";
-    echo "<tr><th>Patient Id</th><th>" . utf8_encode($row[1]) . "</th></tr>";
-    echo "<tr><th>Name</th> <th>" . utf8_encode($row[2]) . "</th></tr>";
-    echo "<tr><th>Phone</th> <th>" . utf8_encode($row[3]) . "</th></tr>";
-    echo "<tr><th>Address</th> <th>" . utf8_encode($row[4]) . "</th></tr>";
-    echo "<tr><th>Interests</th> <th>" . utf8_encode($row[5]) . "</th></tr>";
-    echo "<tr><th>Mobile number</th> <th>" . utf8_encode($row[6]) . "</th></tr>";
+    echo "<tr><th>Tipo de ID</th> <th>" . utf8_encode($row[0]) . "</th></tr>";
+    echo "<tr><th>ID del paciente</th><th>" . utf8_encode($row[1]) . "</th></tr>";
+    echo "<tr><th>Nombre</th> <th>" . utf8_encode($row[2]) . "</th></tr>";
+    echo "<tr><th>Teléfono</th> <th>" . utf8_encode($row[3]) . "</th></tr>";
+    echo "<tr><th>Dirección</th> <th>" . utf8_encode($row[4]) . "</th></tr>";
+    echo "<tr><th>Interesés</th> <th>" . utf8_encode($row[5]) . "</th></tr>";
+    echo "<tr><th>Número de celular</th> <th>" . utf8_encode($row[6]) . "</th></tr>";
     $conn->close();
   ?>
   </table>

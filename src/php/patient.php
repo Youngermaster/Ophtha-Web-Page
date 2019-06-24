@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/register.css">
 
-    <title>Clients | Ophtha</title>
+    <title>Pacientes | Ophtha</title>
 </head>
 <body>
     
@@ -35,19 +35,19 @@
               <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/home.html">Home</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/home.html">Inicio</a>
                       </li>
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Calls</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Llamadas</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="registers.php">Registers</a>
+                          <a  style="text-decoration:none"class="nav-link-personalized" href="registers.php">Droguerías</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Patient</a>
+                          <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Paciente</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none" class="nav-link-personalized" href="../../index.php">Exit</a>
+                          <a  style="text-decoration:none" class="nav-link-personalized" href="../../index.php">Salir</a>
                       </li>
                       <li class="nav-item">
                           <div class="toggle-container">
@@ -56,7 +56,6 @@
                       </li>
                   </ul>
               </div>
-    
           </div>
       </nav>
       </div>
@@ -65,9 +64,9 @@
 <div class="container">
         <form class="form-inline my-2 my-lg-0"  action="search_patient.php" method="get">
             <p>
-                <a class="btn btn-outline-primary my-2 mr-2 my-lg-0 " href="new_patient_form.php" role="button">Add a patient</a>
-                <input name="search" class="form-control " type="text" placeholder="Search">
-                <input role="button" class="btn btn-outline-primary" type="submit" name="sending" value="search">
+                <a class="btn btn-outline-primary my-2 mr-2 my-lg-0 " href="new_patient_form.php" role="button">Añadir un paciente</a>
+                <input name="search" class="form-control " type="text" placeholder="Buscar">
+                <input role="button" class="btn btn-outline-primary" type="submit" name="sending" value="Buscar">
             </p>
         </form>
     </div>
@@ -77,10 +76,11 @@
     <table>
         <tr>
             <th>Id</th>
-            <th>Type Id</th> 
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Delete</th>
+            <th>Tipo de ID</th> 
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Actualizar</th>
+            <th>Borrar</th>
         </tr>
         
 <?php
@@ -99,8 +99,12 @@ if ($conn->connect_error)
         "\" onclick=\"reply_click(this.id)\">". utf8_encode($row[1]) . " </a> </td><td> "
         . utf8_encode($row[0]) . " </td><td> " . utf8_encode($row[2]) . " </td><td> " . utf8_encode($row[3]) .
         " </td><td> <a role=\"button\"  
-        class=\"btn btn-danger my-2\" href=\"delete_patient.php\" id =\"" . 
-        utf8_encode($row[1]) . "\" onclick=\"reply_click(this.id)\"> Delete </a> </td></tr>";
+        class=\"btn btn-outline-primary my-2\" href=\"delete_patient.php\" id =\"" . 
+        utf8_encode($row[1]) . "\" onclick=\"reply_click(this.id)\"> Actualizar </a> </td>
+        
+        </td><td> <a role=\"button\"  
+        class=\"btn btn-outline-danger my-2\" href=\"delete_patient.php\" id =\"" . 
+        utf8_encode($row[1]) . "\" onclick=\"reply_click(this.id)\"> Eliminar </a> </td></tr>";
       }
   } 
   else 
@@ -112,7 +116,7 @@ $conn->close();
   </div>
   <br><br>
   <footer>
-    <h6>&copy 2019 | All rights reserved.</h6>
+    <h6>&copy 2019 | Todos los derechos reservados.</h6>
   </footer>
 
   <script src="../js/toogle.js"></script>   

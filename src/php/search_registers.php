@@ -19,13 +19,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <title>Registers | Ophtha</title>
+    <title>Droguerías | Ophtha</title>
 </head>
 <body>
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light bg-dark sticky-top">
           <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><img src="../assets/images/Logos/Ophta-logo-75x75-transparent.png"></a>
+              <a class="navbar-brand" href="../html/home.html"><img src="../assets/images/Logos/Ophta-logo-75x75-transparent.png"></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                   <span class="navbar-toggler-icon"></span>
               </button>
@@ -33,19 +33,19 @@
               <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/index.html">Home</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="../html/home.html">Home</a>
                       </li>
                       <li class="nav-item">
-                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Calls</a>
+                          <a style="text-decoration:none" class="nav-link-personalized" href="calls.php">Llamadas</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="registers.php">Registers</a>
+                          <a  style="text-decoration:none"class="nav-link-personalized" href="registers.php">Droguerías</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Patient</a>
+                          <a  style="text-decoration:none"class="nav-link-personalized" href="patient.php">Pacientes</a>
                       </li>
                       <li class="nav-item">
-                          <a  style="text-decoration:none" class="nav-link-personalized" href="../../index.php  ">Exit</a>
+                          <a  style="text-decoration:none" class="nav-link-personalized" href="../../index.php">Salir</a>
                       </li>
                       <li class="nav-item">
                           <div class="toggle-container">
